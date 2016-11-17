@@ -7,8 +7,15 @@ function lint()
     {
         parts[p] = "    " + parts[p];
     }
-    
+
     code.value = parts.join("\n");
+}
+
+function lintAndCopy()
+{
+    lint();
+    document.getElementById("code-block").select();
+    document.execCommand("copy");
 }
 
 // thanks: http://stackoverflow.com/questions/6140632/how-to-handle-tab-in-textarea

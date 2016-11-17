@@ -4,21 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="RedditLint is a JavaScript tool designed to format Reddit code blocks.">
-        
+
         <title>RedditLint :: Code Beautifier</title>
-        
+
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        
+
         <!-- JQuery -->
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-        
+
         <!-- RedditLint -->
 	<script src="lib/jquery-linedtextarea/jquery-linedtextarea.js"></script>
 	<link href="lib/jquery-linedtextarea/jquery-linedtextarea.css" type="text/css" rel="stylesheet" />
         <link rel="stylesheet" href="redditlint.css">
         <script src="redditlint.js"></script>
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">  
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
     </head>
     <body>
@@ -33,7 +33,12 @@
             </div>
             <div class="row">
                 <div class="col-md-12 rl-col">
-                    <button id="format-btn" type="button" class="btn 
+                    <button id="format-copy-btn" type="button" class="btn
+                            btn-secondary pull-right btn-lg btn-outline-secondary"
+                            onclick="lintAndCopy()">
+                        Format + Copy
+                    </button>
+                    <button id="format-btn" type="button" class="btn
                             btn-secondary pull-right btn-lg btn-outline-secondary"
                             onclick="lint()">
                         Format
