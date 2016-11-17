@@ -1,0 +1,25 @@
+#code-block 
+{
+    height: 500px;
+    width: 100%;
+    resize: none;
+}
+
+#code-block:focus 
+{
+    outline: none;
+}
+
+#format-btn
+{
+    margin-top: 5px;
+    background: none;
+    border: 1px solid black;
+    color: black;
+}
+
+.rl-col
+{   
+    padding-left: 0px;
+    padding-right: 0px;
+}

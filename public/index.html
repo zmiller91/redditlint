@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>RedditLint :: Code Formatter</title>
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <!-- JQuery -->
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        
+        <!-- RedditLint -->
+	<script src="lib/jquery-linedtextarea/jquery-linedtextarea.js"></script>
+	<link href="lib/jquery-linedtextarea/jquery-linedtextarea.css" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href="redditlint.css">
+        <script src="redditlint.js"></script>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">  
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>RedditLint <small>code beautifier</small></h1>
+            </div>
+            <div class="row">
+                <div class="col-md-12 rl-col">
+                    <textarea id="code-block" class="lined"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 rl-col">
+                    <button id="format-btn" type="button" class="btn 
+                            btn-secondary pull-right btn-lg btn-outline-secondary"
+                            onclick="lint()">
+                        Format
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        $(function() {
+                $(".lined").linedtextarea();
+        });
+    </script>
+</html>
