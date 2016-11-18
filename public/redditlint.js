@@ -1,11 +1,28 @@
+function valid(parts, tab)
+{
+    for(var p in parts)
+    {
+        if(parts[p].substring(0, tab.length) !== tab)
+        {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
 function lint()
 {
+    var tab = "    ";
     var code = document.getElementById("code-block");
     var text = code.value;
     var parts = text.split("\n");
-    for(var p in parts)
+    if(!valid(parts, tab))
     {
-        parts[p] = "    " + parts[p];
+        for(var p in parts)
+        {
+            parts[p] = tab + parts[p];
+        }
     }
 
     code.value = parts.join("\n");
