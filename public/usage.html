@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+        <script type='text/javascript'>
+           google.charts.load('upcoming', {'packages': ['geochart'], 'key': 'AIzaSyD9SNPYe76-cmhPEx6EOQbmDD6KukqY9LE'});
+           google.charts.setOnLoadCallback(drawChart);
+
+           function drawChart () {
+               var data = new google.visualization.DataTable();
+               data.addColumn('string', 'Country');
+               data.addColumn('number', 'Views');
+               data.addRows([
+                   ["Malaysia", 9],
+                   ["Kazakhstan", 1],
+                   ["Portugal", 13],
+                   ["Iceland", 5],
+                   ["Greece", 8],
+                   ["Latvia", 4],
+                   ["Austria", 19],
+                   ["Panama", 1],
+                   ["Macedonia, The Former Yugoslav Republic of", 3],
+                   ["Brazil", 24],
+                   ["Korea, Republic of", 5],
+                   ["Guam", 1],
+                   ["Slovenia", 8],
+                   ["Chile", 2],
+                   ["Nepal", 1],
+                   ["Iran, Islamic Republic of", 1],
+                   ["Tanzania, United Republic of", 1],
+                   ["Colombia", 3],
+                   ["Ecuador", 2],
+                   ["Argentina", 9],
+                   ["Hungary", 11],
+                   ["Japan", 23],
+                   ["Isle of Man", 2],
+                   ["Ukraine", 5],
+                   ["Belarus", 2],
+                   ["India", 48],
+                   ["Albania", 3],
+                   ["New Zealand", 26],
+                   ["Canada", 179],
+                   ["Turkey", 11],
+                   ["Belgium", 19],
+                   ["Finland", 28],
+                   ["Italy", 20],
+                   ["Honduras", 1],
+                   ["South Africa", 2],
+                   ["Georgia", 2],
+                   ["Jamaica", 1],
+                   ["Peru", 1],
+                   ["Germany", 113],
+                   ["Russian Federation", 15],
+                   ["Puerto Rico", 4],
+                   ["Singapore", 14],
+                   ["Viet Nam", 3],
+                   ["Hong Kong", 6],
+                   ["United States", 1567],
+                   ["Egypt", 5],
+                   ["Thailand", 1],
+                   ["Malta", 1],
+                   ["Saudi Arabia", 3],
+                   ["Netherlands", 79],
+                   ["Sweden", 59],
+                   ["Pakistan", 2],
+                   ["Ireland", 25],
+                   ["China", 68],
+                   ["Qatar", 1],
+                   ["Poland", 46],
+                   ["Slovakia", 3],
+                   ["France", 26],
+                   ["Lithuania", 18],
+                   ["Serbia", 13],
+                   ["Kuwait", 1],
+                   ["Bulgaria", 4],
+                   ["Jordan", 1],
+                   ["Bosnia and Herzegovina", 4],
+                   ["Croatia", 6],
+                   ["Taiwan, Province of China", 4],
+                   ["Romania", 12],
+                   ["Syrian Arab Republic", 1],
+                   ["Philippines", 5],
+                   ["United Kingdom", 222],
+                   ["Kenya", 1],
+                   ["Switzerland", 8],
+                   ["Spain", 17],
+                   ["Lebanon", 1],
+                   ["Czech Republic", 15],
+                   ["Bangladesh", 3],
+                   ["Norway", 28],
+                   ["Venezuela, Bolivarian Republic of", 1],
+                   ["Denmark", 39],
+                   ["Dominican Republic", 1],
+                   ["Mexico", 11],
+                   ["Israel", 8],
+                   ["Australia", 65],
+                   ["Estonia", 10],
+                   ["Indonesia", 3]
+               ]);
+
+               var chart = new google.visualization.ChartWrapper({
+                   chartType: 'GeoChart',
+                   containerId: 'chart_div',
+                   dataTable: data,
+                   options: {
+                       width: 600,
+                       legend: 'none' // hide the legend since the values will not be accurate
+                   },
+                   view: {
+                       columns: [0, {
+                           // log scale the data
+                           type: 'number',
+                           label: 'Value',
+                           calc: function (dt, row) {
+                               // find the base-10 log of the value
+                               var log = Math.log(dt.getValue(row, 1)) / Math.log(10);
+                               return {v: log, f: dt.getFormattedValue(row, 1)};
+                           }
+                       }]
+                   }
+               });
+               chart.draw();
+           }
+        </script>
+        
+        
+    </head>
+
+    <body>
+        <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    </body>
+</html>
