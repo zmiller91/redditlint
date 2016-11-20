@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<!--
+
+To change this license header, choose License Headers in Project Properties.
+
+To change this template file, choose Tools | Templates
+
+and open the template in the editor.
+
+-->
+
+<html>
+
+    <head>
+
+        <title></title>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+
+        <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+
+        <script type='text/javascript'>
+
+           google.charts.load('upcoming', {'packages': ['geochart']});
+
+           google.charts.setOnLoadCallback(drawChart);
+
+           function drawChart () {
+
+               var data = new google.visualization.DataTable();
+
+               data.addColumn('string', 'Country');
+
+               data.addColumn('number', 'Views');
+
+               data.addRows([["Kazakhstan",1],["Paraguay",1],["Portugal",45],["Greece",24],["Cayman Islands",1],["Latvia",12],["Morocco",2],["Panama",3],["Iraq",1],["Chile",9],["Nepal",1],["Iran, Islamic Republic of",2],["Tanzania, United Republic of",1],["Argentina",26],["Isle of Man",2],["Ukraine",18],["Bahrain",2],["India",106],["Canada",453],["Turkey",18],["Belgium",50],["Finland",68],["South Africa",17],["Georgia",2],["Jamaica",1],["Peru",4],["Germany",317],["Puerto Rico",7],["Viet Nam",4],["Hong Kong",11],["United States",3714],["Thailand",6],["Costa Rica",2],["Sweden",127],["Poland",106],["Kuwait",1],["Bulgaria",20],["Jordan",1],["Nigeria",1],["Tunisia",2],["Palestine, State of",2],["Croatia",20],["Syrian Arab Republic",1],["Sri Lanka",1],["United Kingdom",520],["United Arab Emirates",2],["Kenya",3],["Switzerland",25],["Spain",61],["Lebanon",5],["Czech Republic",27],["Saint Martin (French Part)",1],["Venezuela, Bolivarian Republic of",10],["Israel",27],["Australia",119],["Estonia",27],["Malaysia",13],["Iceland",11],["Austria",45],["El Salvador",1],["Luxembourg",4],["Macedonia, The Former Yugoslav Republic of",6],["Brazil",52],["Korea, Republic of",8],["Guam",2],["Slovenia",21],["Colombia",12],["Ecuador",2],["Hungary",26],["Japan",37],["Belarus",4],["Albania",5],["New Zealand",51],["Senegal",1],["Italy",42],["Honduras",3],["Russia",31],["Singapore",22],["Egypt",8],["Malta",3],["Saudi Arabia",5],["Netherlands",172],["Pakistan",6],["Ireland",66],["China",76],["Qatar",2],["Slovakia",6],["France",65],["Lithuania",30],["Serbia",32],["Bosnia and Herzegovina",10],["Taiwan, Province of China",8],["Romania",39],["Philippines",17],["Bangladesh",6],["Norway",66],["Dominican Republic",4],["Denmark",99],["Mexico",35],["Montenegro",2],["Indonesia",4],["Dominica",1]]);
+
+               var chart = new google.visualization.ChartWrapper({
+
+                   chartType: 'GeoChart',
+
+                   containerId: 'chart_div',
+
+                   dataTable: data,
+
+                   options: {
+
+                       width: 600,
+
+                       legend: 'none' // hide the legend since the values will not be accurate
+
+                   },
+
+                   view: {
+
+                       columns: [0, {
+
+                           // log scale the data
+
+                           type: 'number',
+
+                           label: 'Value',
+
+                           calc: function (dt, row) {
+
+                               // find the base-10 log of the value
+
+                               var log = Math.log(dt.getValue(row, 1)) / Math.log(10);
+
+                               return {v: log, f: dt.getFormattedValue(row, 1)};
+
+                           }
+
+                       }]
+
+                   }
+
+               });
+
+               chart.draw();
+
+           }
+
+        </script>
+
+        
+
+        
+
+    </head>
+
+
+
+    <body>
+
+        <div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+    </body>
+
+</html>
