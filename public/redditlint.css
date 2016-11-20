@@ -13,8 +13,7 @@
 #format-btn,
 #format-copy-btn
 {
-    margin-top: 5px;
-    margin-left: 5px;
+    margin: 5px;
     background: none;
     border: 1px solid black;
     color: black;
