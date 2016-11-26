@@ -7,7 +7,7 @@ function valid(parts, tab)
             return false;
         }
     }
-    
+
     return true;
 }
 
@@ -31,8 +31,16 @@ function lint()
 function lintAndCopy()
 {
     lint();
+
     document.getElementById("code-block").select();
     document.execCommand("copy");
+
+    $("#alert-copied-to-clipboard").show(0, function () {
+        var that = this;
+        setTimeout(function () {
+            $(that).fadeOut();
+        }, 1000);
+    });
 }
 
 // thanks: http://stackoverflow.com/questions/6140632/how-to-handle-tab-in-textarea

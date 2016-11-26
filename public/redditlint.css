@@ -24,3 +24,16 @@
     padding-left: 0px;
     padding-right: 0px;
 }
+
+#alert-copied-to-clipboard
+{
+    position: fixed;
+    text-align: center;
+    top: 33.3vh;
+    left: 0;
+    right: 0;
+    padding: 35px;
+    background-color: black;
+    color: white;
+    font-weight: 300;
+}
